@@ -1,4 +1,4 @@
-package src.meme.content;
+package meme.content;
 
 import arc.graphics.*;
 import mindustry.type.*;
@@ -14,11 +14,11 @@ public class MemeItems{
         buildable = false;
     }};
     phaseFabric = new Item("phase-fabric", Color.valueOf("f4ba6e")){{
-        radioactivity = "none";
-        cost = 1.3f
-        healthScaling = 0.25f
+        radioactivity = 0.00001f;
+        cost = 1.3f;
+        healthScaling = 0.25f;
     }};
 }
-
+}
 
  
