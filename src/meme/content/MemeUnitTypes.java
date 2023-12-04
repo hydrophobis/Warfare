@@ -3,6 +3,8 @@ package meme.content;
 import arc.graphics;
 import mindustry.type.*;
 
+public class @EntityDef({Unitc.class, Mechc.class}) UnitType crawler; 
+
 public class MemeUnitTypes{
     public static UnitType crawler;
 
