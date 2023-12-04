@@ -28,6 +28,8 @@ public class MemeUnitTypes{
                 shootSound = Sounds.pew;
 
                 bullet = new BulletType(){{
+                    shootOnDeath = true;
+                    shootCone = 180f;
                     damage = 9f;
                     speed = 3.5f;
                     drag = 0f;
@@ -42,10 +44,22 @@ public class MemeUnitTypes{
             weapons.add(new Weapon(){{
                shootY = x = 0f;
                reload = 24f;
-               shootSound = Sounds.boom;
+               shootSound = Sounds.explosion;
+                controllable = false;
+                shootY = x = 0;
                
                bullet = new BulletType(){{
-                    
+                    visible = false;
+                    splashDamageRadius = 110f;
+                   splashDamage = 40f;
+                   collides = false;
+                   collidesTiles = false;
+                   hitSound = Sounds.explosion;
+                   hittable = false;
+                   speed = 0f;
+                   instantDisappear = true;
+                   collidesAir = true;
+                   
                }};
             }});
         }};
