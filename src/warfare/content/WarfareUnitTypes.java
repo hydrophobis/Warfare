@@ -84,7 +84,21 @@ public class WarfareUnitTypes{
     
     
     //Support Unit Tree
+
+    //Repair Camp needs sprites still
     repairCamp = new UnitType("repair-camp"){{
-        
+        hitSize = 8f;
+        speed = 1.5f;
+        health = 75f;
+        ability = new RegenAbility("camp-regen"){{
+            percentAmount = 0.3f;
+        }};
+
+        weapon.add = new RepairBeamWeapon("repair-weak"){{
+            x = 7f;
+            shootY = 5f;
+            repairSpeed = 1f;
+
+        }};
     }};
 }};
