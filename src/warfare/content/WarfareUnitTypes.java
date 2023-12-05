@@ -42,9 +42,9 @@ public class WarfareUnitTypes{
         health = 100f;
         weapons.add(new Weapon("assault-weapon"){{
             shootY = 12f;
+            mirror = false;
             reload = 7f;
             x = 12f;
-            warmupSpeed = 0.3f;
             assaultBullet = new BulletType(){{
                 lifetime = 90f;
                 speed = 45f;
@@ -54,5 +54,30 @@ public class WarfareUnitTypes{
                 pierceDamageFactor = 0.5f;
             }};
          }});
+    }};
+
+    artillery = new UnitType("artillery"){{
+        aiController = GroundAi::new;
+
+        speed = 0.2f;
+        hitSize = 13f;
+        rotateSpeed = 2f;
+        targetAir = false;
+        health = 600f;
+        mechFrontSway = 0.55f;
+
+        weapon.add = new Weapon("artillery-weapon"){{
+            x = 18f;
+            mirror = false;
+            shootY = 18f;
+            reload = 60f;
+            range = 50f;
+            artilleryBullet = new BulletType(){{
+                lifetime = 300f;
+                speed = 60f;
+                splashDamage = 75f;
+                splashDamageRadius = 40f;
+            }};
+        }};
     }};
 }};
