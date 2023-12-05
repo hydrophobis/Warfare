@@ -1,5 +1,7 @@
 package warfare.content;
 
+import mindustry.core.*;
+
 import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.math.*;
@@ -33,14 +35,15 @@ public class WarfareUnitTypes{
     public static @EntityDef({Unitc.class, Mechc.class}) UnitType dagger;
 
 
-    public static void load(){
-    assault = new UnitType("assault"){{
+    public static void load(){ 
+
+    assault = new UnitType("dagger"){{
         aiController = GroundAi::new;
 
         speed = 0.7f;
         hitSize = 8f;
         health = 100f;
-        weapons.add(new Weapon("assault-weapon"){{
+        weapons.add(new Weapon("artillery"){{
             shootY = 12f;
             mirror = false;
             reload = 7f;
@@ -56,7 +59,7 @@ public class WarfareUnitTypes{
          }});
     }};
 
-    artillery = new UnitType("artillery"){{
+    artillery = new UnitType("fortress"){{
         aiController = GroundAi::new;
 
         speed = 0.2f;
@@ -66,7 +69,7 @@ public class WarfareUnitTypes{
         health = 600f;
         mechFrontSway = 0.55f;
 
-        weapon.add = new Weapon("artillery-weapon"){{
+        weapon.add = new Weapon("scepter-weapon"){{
             x = 18f;
             mirror = false;
             shootY = 18f;
@@ -90,16 +93,33 @@ public class WarfareUnitTypes{
         hitSize = 8f;
         speed = 1.5f;
         health = 75f;
-        ability = new RegenAbility("camp-regen"){{
+        abilities.add = new RegenAbility("camp-regen"){{
             percentAmount = 0.3f;
         }};
 
-        weapon.add = new RepairBeamWeapon("repair-weak"){{
-            x = 7f;
+        weapon.add = new RepairBeamWeapon("repair-beam-weapon-center-large"){{
             mirror = true;
             shootY = 5f;
             repairSpeed = 1f;
 
         }};
+    }};
+
+    repairOutpost = new UnitType("pulsar"){{
+        hitSize = 11f;
+        speed = 1.75f;
+        health = 250f;
+
+        abilities.add =(new RepairFieldAbility(5f, 90f, 40f));
+
+        abilities.add =(new ShieldArcAbility(40f, 0.3f, 750f, 300f));
+
+        weapon.add = new RepairBeamWeapon("heal-shotgun-weapon"){{
+            mirror = false;
+            x = 8f;
+            shootY = 8f;
+            repairSpeed = 2.5f;
+        }};
+
     }};
 }};
