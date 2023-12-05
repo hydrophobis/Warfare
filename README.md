@@ -1,13 +1,12 @@
-# Just a silly(gone) mod
-This mod adds some silly and stupid OP changes to the game
-If you dont like the funny then dont download it
+# A war themed mod
+This mod adds extra units that are useful in attacking enemy bases
 
-Compiling locally:
+# Compiling locally(Windows):
 1. Clone the project
-2. Open the terminal
-3. Type "mvn compile" and hit enter
+2. Open CMD in the search bar
+3. Run the gradlew file like this (cloned repo directory here)\gradlew build
 
 # Current project:
-1. Change item base stats
-2. Create a funny bundle
-3. Possibly make some funny sprites too
+1. Add ground units(Total of either 14 or 21)
+2. Add contructors/reconstructtors for the units
+3. Add air units(Total of either 7 or 14)
