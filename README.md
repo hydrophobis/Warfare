@@ -1,4 +1,4 @@
-# A mod that adds
+# A war themed mod
 This mod adds extra units that are useful in attacking enemy bases
 
 # Compiling locally(Windows):
