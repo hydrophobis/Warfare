@@ -32,11 +32,14 @@ import static mindustry.Vars.*;
 
 public class WarfareUnitTypes{
 
-    public static @EntityDef({Unitc.class, Mechc.class}) UnitType dagger;
+    public static @EntityDef({Unitc.class, Mechc.class}) UnitType assault, artillery;
+
+    public static @EntityDef(value = {Unitc.class, Mechc.class}, legacy = true) UnitType repairCamp, repairOutpost, siege;
 
 
     public static void load(){ 
-
+    
+    //Attack A1
     assault = new UnitType("dagger"){{
         aiController = GroundAi::new;
 
@@ -59,6 +62,7 @@ public class WarfareUnitTypes{
          }});
     }};
 
+    //Attack B1 
     artillery = new UnitType("fortress"){{
         aiController = GroundAi::new;
 
@@ -88,8 +92,10 @@ public class WarfareUnitTypes{
     
     //Support Unit Tree
 
-    //Repair Camp needs sprites still
-    repairCamp = new UnitType("repair-camp"){{
+    //Support Weak Repair
+    repairCamp = new UnitType("nova"){{
+        aiController = RepairAi::new;
+
         hitSize = 8f;
         speed = 1.5f;
         health = 75f;
@@ -104,7 +110,8 @@ public class WarfareUnitTypes{
 
         }};
     }};
-
+    //LAYER TWO SUPPORT
+    //Support 75% heal 25% shield
     repairOutpost = new UnitType("pulsar"){{
         hitSize = 11f;
         speed = 1.75f;
@@ -112,7 +119,7 @@ public class WarfareUnitTypes{
 
         abilities.add =(new RepairFieldAbility(5f, 90f, 40f));
 
-        abilities.add =(new ShieldArcAbility(40f, 0.3f, 750f, 300f));
+        abilities.add =(new ForceFieldAbility(40f, 0.3f, 750f, 300f));
 
         weapon.add = new RepairBeamWeapon("heal-shotgun-weapon"){{
             mirror = false;
@@ -122,4 +129,68 @@ public class WarfareUnitTypes{
         }};
 
     }};
+
+    //Support 100% shield
+    siege = new UnitType("fortress"){{
+
+
+        hitSize = 13f;
+        speed = 0.3f;
+        health = 1200f;
+        armor = 15f;
+        mechFrontSway = 0.4f;
+
+        abilities.add =(new ForceFieldAbility(60f, 5f, 3000f, 600f));
+
+        weapon.add = new Weapon("large-artillery"){{
+            x = 18f;
+            shootY = 12f;
+            reload = 30f;
+            inaccuracy = 1f;
+
+            siegeBullet = new BulletType(){{
+                lifetime = -1f;
+                speed = 30f;
+                damage = 15f;
+            }};
+        }};
+    }};
+    //LAYER THREE SUPPORT
+    //Support C1
+    repairCenter = new UnitType("quasar"){{
+        hitSize = 13f;
+        health = 500f;
+        armor = 8f;
+
+        abilities.add =(new RepairFieldAbility(10f, 60f, 60f));
+
+        abilities.add =(new ForceFieldAbility(40f, 0.5f, 800f, 240f));
+    }};
+
+    //Support C2
+    fieldCenter = new UnitType("quasar"){{
+        hitSize = 14f;
+        health = 500f;
+        armor = 12f;
+
+        abilities.add =(new RepairFieldAbility(10f, 60f, 60f));
+
+        abilities.add =(new ForceFieldAbility(40f, 0.5f, 800f, 240f));
+
+        weapon.add = new Weapon("heal-shotgun-weapon"){{
+            x = 20f;
+            shootY = 12f;
+            reload = 15f;
+            inaccuracy = 1f;
+
+            fieldCenterBullet = new BulletType(){{
+                lifetime = 60f;
+                speed = 15f;
+                damage = 30f;
+                color = "98ffa9ff"
+                healPercent = 3f;
+
+        }};
+    }};
 }};
+    }};
