@@ -71,7 +71,7 @@ public class WarfareUnitTypes{
             mirror = false;
             shootY = 18f;
             reload = 60f;
-            range = 50f;
+            range = 15f;
             artilleryBullet = new BulletType(){{
                 lifetime = 300f;
                 speed = 60f;
@@ -79,5 +79,12 @@ public class WarfareUnitTypes{
                 splashDamageRadius = 40f;
             }};
         }};
+    }};
+    
+    
+    
+    //Support Unit Tree
+    repairCamp = new UnitType("repair-camp"){{
+        
     }};
 }};
