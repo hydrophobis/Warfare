@@ -28,7 +28,7 @@ import static arc.graphics.g2d.Lines.*;
 import static arc.math.Angles.*;
 import static mindustry.Vars.*;
 
-public class MemeUnitTypes{
+public class WarfareUnitTypes{
 
     public static @EntityDef({Unitc.class, Mechc.class}) UnitType dagger;
 
