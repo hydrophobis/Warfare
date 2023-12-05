@@ -96,6 +96,7 @@ public class WarfareUnitTypes{
 
         weapon.add = new RepairBeamWeapon("repair-weak"){{
             x = 7f;
+            mirror = true;
             shootY = 5f;
             repairSpeed = 1f;
 
