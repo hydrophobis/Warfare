@@ -1,4 +1,4 @@
-package meme;
+package warfare;
 
 import arc.*;
 import arc.util.*;
@@ -8,7 +8,7 @@ import mindustry.ui.dialogs.*;
 
 public class MemeJavaMod extends Mod{
 
-    public MemeJavaMod(){
+    public WarfareJavaMod(){
         Log.info("Loaded ExampleJavaMod constructor.");
 
         //listen for game load event

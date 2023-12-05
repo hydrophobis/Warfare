@@ -1,8 +1,8 @@
-displayName: "Sillygone"
-name: "sillygone"
+displayName: "Warfare"
+name: "wf"
 author: "CamoGekko"
-main: "meme.MemeJavaMod.java"
-description: "Funny mod"
-version: 0.1.4
+main: "Warfare.WarfareJavaMod.java"
+description: "Mostly adds warfare themed units"
+version: 0.1.0
 minGameVersion: 145
 java: true
