@@ -159,7 +159,7 @@ public class WarfareUnitTypes{
     }};
     //LAYER THREE SUPPORT
     //Support C1
-    repairCenter = new UnitType("quasar"){{
+    repairCenter = new UnitType("quasar1"){{
         hitSize = 13f;
         health = 500f;
         armor = 8f;
