@@ -66,7 +66,7 @@ public class WarfareUnitTypes{
     }};
     //LAYER TWO SUPPORT
     //Support 75% heal 25% shield
-    repairOutpost = new UnitType("repairOutpost"){{
+    repairOutpost = new UnitType(" repairOutpost"){{
 constructor = UnitEntity::create;
 
         hitSize = 11f;
