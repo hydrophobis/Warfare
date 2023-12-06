@@ -233,6 +233,7 @@ public class WarfareUnitTypes{
     }};
 
     //Support C4
+    //Needs sprites still
     siege = new UnitType("siege"){{
         hitSize = 30f;
         speed = 0.3f;
@@ -269,6 +270,20 @@ public class WarfareUnitTypes{
                     weaveScale = 10f;
                     weaveMag = 3f;
                 }};
+        }});
+    }};
+
+    //Tumult Upgrade 1
+    affray = new UnitType("scepter1"){{
+        hitSize = 18f;
+        speed = 1f;
+        mechFrontSway = 1.6f;
+        health = 10000f;
+        armor = 10f;
+
+        weapons.add(new Weapon("scathe-missle"){{
+            reload = 20f;
+            hitSize = 
         }});
     }};
 }};
