@@ -1,6 +1,7 @@
 package warfare.content;
 
 import mindustry.core.*;
+import mindustry.
 
 import arc.graphics.*;
 import arc.graphics.g2d.*;
@@ -10,10 +11,11 @@ import arc.struct.*;
 import arc.util.*;
 import mindustry.ai.*;
 import mindustry.ai.types.*;
+import mindustry.content.Fx;
 import mindustry.entities.*;
 import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
-import mindustry.entities.bullet.BulletType;
+import mindustry.entities.bullet.BulletType.*;
 import mindustry.entities.effect.*;
 import mindustry.entities.part.*;
 import mindustry.entities.pattern.*;
@@ -36,7 +38,7 @@ public class WarfareUnitTypes{
 
     public static UnitType assault, artillery;
 
-    public static UnitType repairCamp, repairOutpost, repairCenter, fieldCenter, riot, tumult;
+    public static UnitType repairCamp, repairOutpost, repairCenter, fieldCenter, riot, tumult, siege;
 
 
     public static void load(){ 
@@ -132,7 +134,7 @@ public class WarfareUnitTypes{
 
     }};
 
-    //Support 100% shield
+    //Support B2
     riot = new UnitType("fort"){{
 
 
@@ -207,6 +209,7 @@ public class WarfareUnitTypes{
             x = 15f;
             shootY = 8;
             reload = 10;
+            rotate = true;
 
             bullet = new BulletType(){{
                 lifetime = 300f;
@@ -220,11 +223,52 @@ public class WarfareUnitTypes{
             shootY = 15f;
             reload = 20f;
 
+
             bullet = new BulletType(){{
                 lifetime = 120f;
                 speed = 10f;
                 damage = 200f;
             }};
+        }});
+    }};
+
+    //Support C4
+    siege = new UnitType("siege"){{
+        hitSize = 30f;
+        speed = 0.3f;
+        health = 4120f;
+        mechFrontSway = 1.2f;
+        armor = 20f;
+
+        weapons.add(new Weapon("sei-launcher"){{
+            reload = 10f;
+            x = 10f;
+            
+            shoot = new ShootAlternate(){{
+                shots = 3;
+                shotDelay = 1.5f;
+                barrels = 3;
+                spread = 4f;
+            }};
+            bullet = new MissileBulletType(4f, 50){{
+                    homingPower = 0.10f;
+                    width = 8f;
+                    height = 12f;
+                    shrinkX = shrinkY = 0f;
+                    drag = 0.02f;
+                    homingRange = 80f;
+                    keepVelocity = false;
+                    splashDamageRadius = 35f;
+                    splashDamage = 45f;
+                    lifetime = 120f;
+                    trailColor = Pal.bulletYellowBack;
+                    backColor = Pal.bulletYellowBack;
+                    frontColor = Pal.bulletYellow;
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+                    weaveScale = 10f;
+                    weaveMag = 3f;
+                }};
         }});
     }};
 }};
