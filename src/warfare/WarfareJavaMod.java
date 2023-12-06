@@ -6,7 +6,7 @@ import mindustry.game.EventType.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
 
-public class MemeJavaMod extends Mod{
+public class WarfareJavaMod extends Mod{
 
     public WarfareJavaMod(){
         Log.info("Loaded ExampleJavaMod constructor.");
