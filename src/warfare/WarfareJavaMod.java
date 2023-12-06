@@ -5,6 +5,7 @@ import arc.util.*;
 import mindustry.game.EventType.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
+import warfare.content.WarfareUnitTypes;
 
 public class WarfareJavaMod extends Mod{
 
@@ -27,6 +28,8 @@ public class WarfareJavaMod extends Mod{
 
     @Override
     public void loadContent(){
+        WarfareUnitTypes.load();
+        Log.info("loading");
     }
 
 }

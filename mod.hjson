@@ -1,7 +1,7 @@
 displayName: "Warfare"
 name: "wf"
 author: "CamoGekko"
-main: "warfare.WarfareJavaMod.java"
+main: "warfare.WarfareJavaMod"
 description: "Mostly adds warfare themed units"
 version: 0.1.0
 minGameVersion: 145
