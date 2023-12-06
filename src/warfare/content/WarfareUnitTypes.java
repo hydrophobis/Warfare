@@ -1,6 +1,7 @@
 package warfare.content;
 
 import mindustry.core.*;
+import warfare.content.WarfareBlocks.*;
 
 import arc.graphics.*;
 import arc.graphics.g2d.*;
@@ -42,62 +43,12 @@ public class WarfareUnitTypes{
 
     public static void load(){ 
     
-    //Attack A1
-    assault = new UnitType("dagger"){{
-        aiController = GroundAI::new;
-
-        speed = 0.7f;
-        hitSize = 8f;
-        health = 100f;
-        weapons.add(new Weapon("artillery"){{
-            shootY = 12f;
-            mirror = false;
-            reload = 7f;
-            x = 12f;
-            bullet = new BulletType(){{
-                lifetime = 90f;
-                speed = 45f;
-                damage = 12f;
-                pierce = true;
-                pierceCap = 3;
-                pierceDamageFactor = 0.5f;
-            }};
-         }});
-    }};
-
-    //Attack B1 
-    artillery = new UnitType("fortress"){{
-        aiController = GroundAI::new;
-
-        speed = 0.2f;
-        hitSize = 13f;
-        rotateSpeed = 2f;
-        targetAir = false;
-        health = 600f;
-        mechFrontSway = 0.55f;
-
-        weapons.add(new Weapon("scepter-weapon"){{
-            x = 18f;
-            mirror = false;
-            shootY = 18f;
-            reload = 60f;
-            range = 15f;
-            bullet = new BulletType(){{
-                lifetime = 300f;
-                speed = 60f;
-                splashDamage = 75f;
-                splashDamageRadius = 40f;
-            }};
-        }});
-    }};
-    
-    
-    
     //Support Unit Tree
 
     //Support Weak Repair
-    repairCamp = new UnitType("nova"){{
+    repairCamp = new UnitType("repairCamp"){{
         aiController = RepairAI::new;
+        constructor = UnitEntity::create;
 
         hitSize = 8f;
         speed = 1.5f;
@@ -115,7 +66,9 @@ public class WarfareUnitTypes{
     }};
     //LAYER TWO SUPPORT
     //Support 75% heal 25% shield
-    repairOutpost = new UnitType("pulsar"){{
+    repairOutpost = new UnitType("repairOutpost"){{
+constructor = UnitEntity::create;
+
         hitSize = 11f;
         speed = 1.75f;
         health = 250f;
@@ -135,7 +88,7 @@ public class WarfareUnitTypes{
 
     //Support B2
     riot = new UnitType("fort"){{
-
+constructor = UnitEntity::create;
 
         hitSize = 13f;
         speed = 0.3f;
@@ -161,6 +114,7 @@ public class WarfareUnitTypes{
     //LAYER THREE SUPPORT
     //Support C1
     repairCenter = new UnitType("quasar1"){{
+        constructor = UnitEntity::create;
         hitSize = 13f;
         health = 500f;
         armor = 8f;
@@ -172,6 +126,7 @@ public class WarfareUnitTypes{
 
     //Support C2
     fieldCenter = new UnitType("quasar"){{
+        constructor = UnitEntity::create;
         hitSize = 14f;
         health = 500f;
         armor = 12f;
@@ -198,6 +153,7 @@ public class WarfareUnitTypes{
     //Support C3
     tumult = new UnitType("scepter"){{
         hitSize = 24f;
+        constructor = UnitEntity::create;
         speed = 0.75f;
         mechFrontSway = 1f;
         health = 6000f;
@@ -235,6 +191,7 @@ public class WarfareUnitTypes{
     //Needs sprites still
     siege = new UnitType("siege"){{
         hitSize = 30f;
+        constructor = UnitEntity::create;
         speed = 0.3f;
         health = 4120f;
         mechFrontSway = 1.2f;
@@ -275,6 +232,7 @@ public class WarfareUnitTypes{
     //Tumult Upgrade 1
     affray = new UnitType("scepter1"){{
         hitSize = 18f;
+        constructor = UnitEntity::create;
         speed = 1f;
         mechFrontSway = 1.6f;
         health = 10000f;

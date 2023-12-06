@@ -58,8 +58,11 @@ public class WarfareBlocks{
                 new UnitPlan(WarfareUnitTypes.repairCamp, 0f * 10, with(Items.silicon, 0, Items.lead, 0)),
                 new UnitPlan(WarfareUnitTypes.riot, 0f * 10, with(Items.silicon, 0, Items.lead, 0)),
                 new UnitPlan(WarfareUnitTypes.tumult, 0f * 10, with(Items.silicon, 0, Items.lead, 0)),
-                new UnitPlan(WarfareUnitTypes.siege, 0f * 10, with(Items.silicon, 0, Items.lead, 0))
+                new UnitPlan(WarfareUnitTypes.siege, 0f * 10, with(Items.silicon, 0, Items.lead, 0)),
+                new UnitPlan(WarfareUnitTypes.affray, 0f * 10, with(Items.silicon, 0, Items.lead, 0))
             );
+            size = 3;
+            consumePower(0f);
         }};
 
 
