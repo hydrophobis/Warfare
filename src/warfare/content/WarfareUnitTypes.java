@@ -170,7 +170,7 @@ public class WarfareUnitTypes{
     }};
 
     //Support C2
-    fieldCenter = new UnitType("quasar"){{
+    fieldCenter = new UnitType("quantum-particles"){{
         hitSize = 14f;
         health = 500f;
         armor = 12f;
