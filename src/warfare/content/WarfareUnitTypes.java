@@ -189,7 +189,7 @@ constructor = UnitEntity::create;
 
     //Support C4
     //Needs sprites still
-    siege = new UnitType("siege"){{
+    siege = new UnitType("reign"){{
         hitSize = 30f;
         constructor = UnitEntity::create;
         speed = 0.3f;
