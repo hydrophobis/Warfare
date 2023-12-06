@@ -1,7 +1,6 @@
 package warfare.content;
 
 import mindustry.core.*;
-import mindustry.
 
 import arc.graphics.*;
 import arc.graphics.g2d.*;
@@ -38,7 +37,7 @@ public class WarfareUnitTypes{
 
     public static UnitType assault, artillery;
 
-    public static UnitType repairCamp, repairOutpost, repairCenter, fieldCenter, riot, tumult, siege;
+    public static UnitType repairCamp, repairOutpost, repairCenter, fieldCenter, riot, tumult, siege, affray;
 
 
     public static void load(){ 
@@ -283,7 +282,7 @@ public class WarfareUnitTypes{
 
         weapons.add(new Weapon("scathe-missle"){{
             reload = 20f;
-            hitSize = 
+            hitSize = 10f;
         }});
     }};
 }};
