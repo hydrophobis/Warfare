@@ -133,7 +133,7 @@ public class WarfareUnitTypes{
     }};
 
     //Support 100% shield
-    riot = new UnitType("fortress"){{
+    riot = new UnitType("fort"){{
 
 
         hitSize = 13f;
