@@ -437,3 +437,4 @@ public class WarfareUnitTypes{
     }};
     }};
 }};
+    }};
